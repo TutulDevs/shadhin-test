@@ -1,0 +1,7 @@
+.field {
+  margin-bottom: 12px;
+}
+
+.error {
+  color: var(--red);
+}

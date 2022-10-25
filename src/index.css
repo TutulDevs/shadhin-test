@@ -9,3 +9,52 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+:root {
+  --green: #2a9d8f;
+  --orange: #e9c46a;
+  --red: #e76f51;
+  --blue: #0077b6;
+  --white: #fff;
+  --black: #333;
+  --gray: #ced4da;
+}
+
+button {
+  cursor: pointer;
+  background: var(--blue);
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.button-success {
+  background: var(--green);
+}
+
+.button-wide {
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--green);
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--gray);
+  font-size: 14px;
+  font-family: inherit;
+}

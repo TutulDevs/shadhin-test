@@ -16,15 +16,10 @@ export const Modal = ({ visible, onClose, children, title }) => {
   const mainModal = visible ? (
     <div id="modal" className={styles.modal}>
       <div className={cn(styles.outer)}>
-        {title && (
-          <div className={cn("h4", styles.title)}>
-            {/* <Icon name="arrow-left" size="32" /> */}
-            {title}
-          </div>
-        )}
+        {title && <div className={cn( styles.title)}>{title}</div>}
         {children}
 
-        <button className={styles.close} onClick={onClose}>
+        <button type="button" className={styles.close} onClick={onClose}>
           X
         </button>
       </div>
