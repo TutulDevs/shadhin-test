@@ -60,26 +60,23 @@ export const Header = () => {
             error={formik.errors.user_type}
           />
 
-          {/* district & divisions only when user_type is employee */}
-          {userTypeIsEmployee && (
-            <>
-              <SelectInput
-                name="division"
-                label="Division"
-                options={divisionsOfBD}
-                onChange={formik.handleChange}
-                error={formik.errors.division}
-              />
+          <>
+            <SelectInput
+              name="division"
+              label="Division"
+              options={divisionsOfBD}
+              onChange={formik.handleChange}
+              error={formik.errors.division}
+            />
 
-              <SelectInput
-                name="district"
-                label="District"
-                options={districtsOfBD}
-                onChange={formik.handleChange}
-                error={formik.errors.district}
-              />
-            </>
-          )}
+            <SelectInput
+              name="district"
+              label="District"
+              options={districtsOfBD}
+              onChange={formik.handleChange}
+              error={formik.errors.district}
+            />
+          </>
 
           <button type="submit" className="button-wide button-success">
             Submit

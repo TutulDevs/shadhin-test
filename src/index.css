@@ -70,7 +70,6 @@ select {
   margin: auto;
 }
 
-
 td,
 th {
   padding: 4px 8px;
@@ -86,3 +85,16 @@ table > thead {
 /* table > tbody > tr:hover {
   background: rgba(0, 0, 0, 0.05);
 } */
+
+.details {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.details h2 {
+  margin-bottom: 16px;
+}
+
+.text-center {
+  text-align: center;
+}

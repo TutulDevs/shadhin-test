@@ -2,8 +2,13 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import { userTypes } from "../../lib/coreconstants";
 import { Country, State, City } from "country-state-city";
+import { useDispatch, useSelector } from "react-redux";
+import { addAdmin } from "../../store/slices/adminSlice";
+import { addEmployee } from "../../store/slices/employeeSlice";
 
 export const useAddUser = () => {
+  const dispatch = useDispatch();
+
   const [showModal, setShowModal] = useState(false);
   const handleToggleModal = () => setShowModal(!showModal);
 
@@ -33,18 +38,16 @@ export const useAddUser = () => {
       errors.user_type = "Select a valid option";
     }
 
-    if (values.user_type === "employee") {
-      if (!values.division) {
-        errors.division = "Required";
-      } else if (values.division === "Select...") {
-        errors.division = "Select a valid option";
-      }
+    if (!values.division) {
+      errors.division = "Required";
+    } else if (values.division === "Select...") {
+      errors.division = "Select a valid option";
+    }
 
-      if (!values.district) {
-        errors.district = "Required";
-      } else if (values.district === "Select...") {
-        errors.district = "Select a valid option";
-      }
+    if (!values.district) {
+      errors.district = "Required";
+    } else if (values.district === "Select...") {
+      errors.district = "Select a valid option";
     }
 
     return errors;
@@ -60,12 +63,14 @@ export const useAddUser = () => {
     },
     validate,
     onSubmit: (payload) => {
-      const data =
-        payload.user_type === "employee"
-          ? payload
-          : { ...payload, division: "", district: "" };
+      if (payload.user_type === "employee") {
+        dispatch(addEmployee(payload));
+      } else {
+        dispatch(addAdmin(payload));
+      }
 
-      console.log(data);
+      handleToggleModal();
+      formik.resetForm();
     },
   });
 

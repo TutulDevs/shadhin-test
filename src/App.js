@@ -1,14 +1,15 @@
-import { Counter } from "./components/Counter/counter";
 import { Routes, Route } from "react-router-dom";
-import { DemoForm } from "./components/DemoForm/DemoForm";
 import { Home } from "./pages/Home";
+import { AdminDetails } from "./components/Details/AdminDetails";
+import { EmployeeDetails } from "./components/Details/EmployeeDetails";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/counter" element={<Counter />} />
+        <Route path="/admin/:id" element={<AdminDetails />} />
+        <Route path="/employee/:id" element={<EmployeeDetails />} />
       </Routes>
     </>
   );

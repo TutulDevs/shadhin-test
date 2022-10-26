@@ -45,6 +45,10 @@
   border-radius: 50%;
   border: 2px solid #ccc;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
 }
 .close:hover svg {
   transform: rotate(90deg);
