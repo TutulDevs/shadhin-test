@@ -20,7 +20,8 @@ body {
   --gray: #ced4da;
 }
 
-button {
+button,
+.button {
   cursor: pointer;
   background: var(--blue);
   padding: 8px 12px;
@@ -46,10 +47,11 @@ button {
 
 a {
   text-decoration: none;
-  color: var(--green);
+  color: var(--blue);
 }
 
-input, select {
+input,
+select {
   display: block;
   width: 100%;
   padding: 8px 16px;
@@ -58,3 +60,29 @@ input, select {
   font-size: 14px;
   font-family: inherit;
 }
+
+.table-responsive {
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.user-table {
+  margin: auto;
+}
+
+
+td,
+th {
+  padding: 4px 8px;
+  min-width: 150px;
+  text-align: left;
+}
+
+table > thead {
+  color: var(--blue);
+  box-shadow: 0 1px var(--gray);
+}
+
+/* table > tbody > tr:hover {
+  background: rgba(0, 0, 0, 0.05);
+} */

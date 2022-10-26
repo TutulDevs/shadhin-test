@@ -4,7 +4,7 @@ import { userTypes } from "../../lib/coreconstants";
 import { Country, State, City } from "country-state-city";
 
 export const useAddUser = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const handleToggleModal = () => setShowModal(!showModal);
 
   // const districts = State.getStatesOfCountry("BD");

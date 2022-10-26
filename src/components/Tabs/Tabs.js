@@ -1,18 +1,44 @@
+import { useState } from "react";
 import styles from "./Tabs.module.css";
+import cn from "classnames";
+import { AdminTable } from "../Tables/AdminTable";
+import { EmployeeTable } from "../Tables/EmployeeTable";
 
 export const Tabs = ({ className }) => {
-  const TABS = {
-    buttons: ["Tab 1", "Tab 2", "Tab 3"],
-    content: [<p>tab content 1</p>, <p>tab content 2</p>, <p>tab content 3</p>],
-  };
+  const [tabIndex, setTabIndex] = useState(0);
 
   return (
     <div>
       {/* tab header/ buttons */}
-      <div className="">tabs</div>
+      <div className={cn(styles.tabHeader)}>
+        <button
+          className={cn(
+            styles.tabHeaderButton,
+            tabIndex === 0 && styles.selected
+          )}
+          type="button"
+          onClick={() => setTabIndex(0)}
+        >
+          Admins
+        </button>
+        <button
+          className={cn(
+            styles.tabHeaderButton,
+            tabIndex === 1 && styles.selected
+          )}
+          type="button"
+          onClick={() => setTabIndex(1)}
+        >
+          Employees
+        </button>
+      </div>
 
       {/* tab components */}
-      <div className=""></div>
+      <div className="">
+        {tabIndex === 0 && <AdminTable />}
+
+        {tabIndex === 1 && <EmployeeTable />}
+      </div>
     </div>
   );
 };

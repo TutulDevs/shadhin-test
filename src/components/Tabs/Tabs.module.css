@@ -1,0 +1,21 @@
+.tabHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+.tabHeaderButton {
+  background: var(--white);
+  color: var(--black);
+  border: 2px solid var(--gray);
+  border-radius: 25px;
+  padding: 6px 16px;
+}
+
+.tabHeaderButton.selected {
+  background: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--blue);
+}
